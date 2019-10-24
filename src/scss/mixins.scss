@@ -1,0 +1,48 @@
+@mixin slider-button-animation {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  &:hover {
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@mixin card-background {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 16px;
+    bottom: -16px;
+    z-index: -1;
+    opacity: 0.3;
+    -webkit-filter:blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter:blur(10px);
+    -ms-filter:blur(10px);
+    filter: blur(10px);
+    border-radius: 8px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+  }
+}
+
+
+@mixin for-tablet {
+  @media (max-width: 1160px) { @content; }
+}
+@mixin for-phone {
+  @media (max-width: 600px) { @content; }
+}
